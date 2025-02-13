@@ -1,0 +1,150 @@
+:root {
+  --border-color: #ef5050;
+}
+
+body {
+  background-color: #fbdcdc;
+  height: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.valentine-card {
+  position: relative;
+  width: 350px;
+  height: fit-content;
+  border: 4px solid var(--border-color);
+  min-height: 500px;
+  margin: 60px 50% 0 50%;
+  box-shadow: inset 10px 0px 15px 0px rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.1),
+      rgb(0, 0, 0)
+    ),
+    url("../assets/falfola1.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 1em;
+}
+
+.valentine-card .txt-box {
+  width: 90%;
+  height: 90%;
+  margin: auto auto 25px auto;
+  font-family: "Nobile", sans-serif;
+}
+
+.valentine-card .txt-box p,
+.valentine-card .txt-box h3 {
+  font-size: 1.1em;
+  color: #ffffff;
+  list-style: 1.4;
+  font-style: italic;
+  text-align: center;
+  margin: 25px auto 0 auto;
+}
+
+.valentine-card .txt-box .title {
+  font-size: 1.5em;
+}
+
+.valentine-card .cover-outer,
+.valentine-card .cover-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: -4px 0 0 -4px;
+  border: 4px solid var(--border-color);
+  border-radius: 1em;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%;
+  transform: perspective(100em) rotateY(0deg);
+  transition: all 0.8s ease-in-out;
+}
+
+.valentine-card .cover-outer {
+  backface-visibility: hidden;
+}
+
+.valentine-card .cover-inner {
+  backface-visibility: visible;
+}
+
+.valentine-card .cover-outer img,
+.valentine-card .cover-inner img {
+  width: 100%;
+  height: 100%;
+}
+
+.valentine-card .cover-outer p.txt {
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  z-index: 1;
+  bottom: 0;
+  width: 100%;
+  transform: translateX(-50%);
+  font-size: 0.8em;
+  color: #c6070761;
+}
+
+.valentine-card .cover-inner img {
+  transform: rotateY(170deg);
+}
+
+.valentine-card:hover .cover-outer,
+.valentine-card:hover .cover-inner {
+  transform: perspective(100em) rotateY(-170deg);
+}
+
+.valentine-card:hover .cover-inner {
+  box-shadow: 7px 0 5px 0 rgba(0, 0, 0, 0.3),
+    inset 2px 0px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+.hide {
+  position: fixed;
+  width: 100%;
+  height: 100dvh;
+  left: 0;
+  top: 0;
+  background-color: #fbdcdc;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hide .content-container {
+  max-width: 300px;
+  margin: auto;
+  font-style: italic;
+  font-family: "Nobile", sans-serif;
+}
+
+.hide .content-container .time {
+  display: flex;
+  justify-content: space-around;
+}
+
+.hide .content-container .time h3 {
+  font-size: 2em;
+  margin: 0;
+  letter-spacing: 5px;
+  border: 1px solid var(--border-color);
+  padding: 0.2em;
+  background: #ef50503d;
+}
+
+#close {
+  display: none;
+}
+
+.click {
+  margin: 2em auto 0;
+  width: fit-content;
+  color: #000;
+}
